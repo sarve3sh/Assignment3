@@ -1,12 +1,14 @@
-type CubicEquation = {
-        a: number
-        b: number
-        c: number
-        d: number
+type Props = {
+    a: number
+    b: number
+    c: number
+    d: number
 }
 
-export default function CubicEquation({ a, b, c, d }:CubicEquation) {
-        return (
-                <p>{a}x³+{b}x²+{c}x+{d}=0</p>
-        )
+export default function CubicEquation({a, b, c, d}: Props){
+    return(
+        <p className="text-center text-xl font-light mb-4">
+            {a}x³ + {b}x² + {c}x + {d} = 0
+        </p>
+    )
 }

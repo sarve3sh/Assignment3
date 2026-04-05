@@ -56,16 +56,19 @@ function App(){
   console.log(a,b,c,d)
 }
   const result=solveCubic(a,b,c,d)
-  return(
-   <div>
-    <h1>Cubic Solver</h1>
-    <CubicInput a={a} b={b} c={c} d={d} setA={setA} setB={setB} setC={setC} setD={setD}
-    onSave={Save} />
-    <CubicEquation a={a} b = {b} c={c} d={d}/>
-    <CubicTable result={result}/>
-    <CubicGraph a={a} b={b} c={c} d={d} roots={result.roots}/>
-    <CubicHistory history ={history} onSelect={handleSelect}/>
-   </div>
-  )
+  return (
+  <div className="min-h-screen bg-gray-100 p-8">
+    <h1 className="text-4xl text-center font-light mb-6" style={{color: 'rgb(0, 142, 61)'}}>Cubic Solver</h1>
+    <div className="bg-white rounded-xl shadow p-6 mb-6">
+      <CubicInput a={a} b={b} c={c} d={d} setA={setA} setB={setB} setC={setC} setD={setD} onSave={Save}/>
+    </div>
+    <CubicEquation a={a} b={b} c={c} d={d}/>
+    <div className="flex flex-row gap-6 mt-6">
+      <CubicTable result={result}/>
+      <CubicGraph a={a} b={b} c={c} d={d} roots={result.roots}/>
+      <CubicHistory history={history} onSelect={handleSelect}/>
+    </div>
+  </div>
+)
 }
 export default App
